@@ -37,7 +37,11 @@ Route::middleware('auth')->group(function () {
     //Ruta para mostrar los posts
     Route::get('/posts/index', [PostController::class, 'index']);
 
-    
+    // Ruta para ver el formulario de edición
+
+    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+
     // Ruta para recibir los datos del formulario (POST)
     Route::post('/posts', [PostController::class, 'store']);
     Route::get('/posts/{post}', [PostController::class, 'show']);
@@ -47,7 +51,6 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/Panel', [AdminController::class, 'index'])->name('admin.adminPanel');
-
 });
 
 require __DIR__ . '/auth.php';

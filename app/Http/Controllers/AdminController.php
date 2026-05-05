@@ -12,7 +12,7 @@ class AdminController extends Controller
         public function index()
         {
             $posts = Post::with('user')->latest()->get();
-            return view('admin.adminPanel', compact('posts') );
+            return view('admin.adminPanel', compact('posts'));
         }
 
 

@@ -10,7 +10,8 @@
         <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
             <div class="p-8">
                 <!-- Categoría -->
-                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-blue-800 uppercase bg-blue-100 rounded-full mb-4">
+                <span
+                    class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-blue-800 uppercase bg-blue-100 rounded-full mb-4">
                     {{ $post->category }}
                 </span>
 
@@ -39,7 +40,12 @@
                     </form>
                 @endif
 
-
+                @if (auth()->id() === $post->user_id)
+                    <a href="/posts/{{ $post->id }}/edit"
+                        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mt-4 inline-block">
+                        Editar Post
+                    </a>
+                @endif
             </div>
         </div>
     </div>
