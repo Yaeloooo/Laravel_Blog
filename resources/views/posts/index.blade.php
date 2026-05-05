@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-extrabold text-gray-900">Listado de Posts</h1>
+            <h1 class="text-3xl font-extrabold text-gray-900">Mis de Posts</h1>
             <a href="/posts/create" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                 + Nuevo Post
             </a>

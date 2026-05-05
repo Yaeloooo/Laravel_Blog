@@ -36,21 +36,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/create', [PostController::class, 'create']);
     //Ruta para mostrar los posts
     Route::get('/posts/index', [PostController::class, 'index']);
+
+    
     // Ruta para recibir los datos del formulario (POST)
     Route::post('/posts', [PostController::class, 'store']);
     Route::get('/posts/{post}', [PostController::class, 'show']);
     Route::delete('/posts/{id}/delete', [PostController::class, 'delete']);
-
-
-
-
-
 });
 
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-    // Aquí irían las rutas para borrar posts de otros, gestionar usuarios, etc.
+    Route::get('/Panel', [AdminController::class, 'index'])->name('admin.adminPanel');
+
 });
 
 require __DIR__ . '/auth.php';

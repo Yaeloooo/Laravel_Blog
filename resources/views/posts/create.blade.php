@@ -1,9 +1,7 @@
 <x-app-layout>
 
-    <h1 class="text-3xl font-bold text-center mt-10">Bienvenido al Blog</h1>
 
-
-    <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow">
+    <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow mt-10">
         <h1 class="text-2xl font-bold mb-6">Crear Nuevo Post</h1>
 
         <form action="/posts" method="POST">
