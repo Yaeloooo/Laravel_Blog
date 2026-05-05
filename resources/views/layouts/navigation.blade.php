@@ -18,6 +18,11 @@
                         Post</a>
                     <a href=""
                         class="text-gray-600 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition">Contacto</a>
+                    @if (auth()->user()->isAdmin())
+                        <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                            {{ __('Panel Administrador') }}
+                        </x-nav-link>
+                    @endif
 
                 </div>
 

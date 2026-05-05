@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
 use App\Models\Post;
 
 
@@ -44,6 +45,12 @@ Route::middleware('auth')->group(function () {
 
 
 
+});
+
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    // Aquí irían las rutas para borrar posts de otros, gestionar usuarios, etc.
 });
 
 require __DIR__ . '/auth.php';
