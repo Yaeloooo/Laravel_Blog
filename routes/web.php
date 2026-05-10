@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    
     //Mostar todos los posts de todos los usuarios en la pagina de inicio
 
     // Ruta para ver el formulario
